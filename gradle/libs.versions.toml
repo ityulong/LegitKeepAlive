@@ -1,0 +1,48 @@
+[versions]
+# AGP 和 Kotlin 版本暂时保留，但请注意它们与旧库组合的潜在风险
+agp = "8.6.1"
+kotlin = "1.9.0"
+
+# --- AndroidX 和 Material 库降级 ---
+# 目标：尝试兼容 compileSdk = 30
+
+# androidx.core:core-ktx (原 1.13.1, 需要 34) -> 尝试 1.3.2 (兼容性较好) 或 1.5.0
+coreKtx = "1.3.2"
+
+# androidx.appcompat:appcompat (原 1.7.0, 需要 34) -> 尝试 1.3.1
+appcompat = "1.3.1"
+
+# com.google.android.material:material (原 1.12.0) -> 需要配合appcompat降级，尝试 1.4.0
+# Material 1.4.0 发布时间与 appcompat 1.3.1 相近
+material = "1.4.0"
+
+# androidx.activity:activity (原 1.9.3, 需要 34) -> 尝试 1.2.0
+activity = "1.2.0"
+
+# androidx.constraintlayout:constraintlayout (原 2.2.1, 需要 34) -> 尝试 2.0.4
+constraintlayout = "2.0.4"
+# --- END AndroidX 和 Material 库降级 ---
+
+coroutines = "1.7.3" # 适用于 Kotlin 1.9.0
+
+
+
+# 测试库版本暂时保留，如果遇到测试编译问题可能也需要调整
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
