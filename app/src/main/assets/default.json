@@ -1,0 +1,31 @@
+{
+  "comment": "所有安卓手机通用的设置",
+  "os_version_property": null,
+  "default_settings": [
+    {
+      "id": "battery_optimization",
+      "title": "关闭电池优化",
+      "description": "如果允许电池优化，可能导致应用在后台被杀掉",
+      "is_checkable": true,
+      "intent": {
+        "permission": "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"
+      }
+    },{
+      "id": "background_data",
+      "title": "开启后台数据",
+      "description": "当应用后台运行，开启后台数据才能及时收到消息",
+      "is_checkable": true,
+      "intent": {
+        "component": "com.android.settings/com.android.settings.datausage.AppDataUsageActivity"
+      }
+    },{
+      "id": "alert_window",
+      "title": "允许后台弹出窗口",
+      "description": "当应用后台运行，能够显示来电界面",
+      "is_checkable": true,
+      "intent": {
+        "permission": "android.permission.SYSTEM_ALERT_WINDOW"
+      }
+    }
+  ]
+}

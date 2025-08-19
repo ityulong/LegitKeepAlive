@@ -1,0 +1,82 @@
+{
+  "comment": "小米手机，通过读取 ro.miui.ui.version.name 属性来判断 MIUI 版本",
+  "os_version_property": "ro.miui.ui.version.name",
+  "default_settings": [
+    {
+      "id": "battery_optimization",
+      "title": "关闭电池优化",
+      "description": "如果允许电池优化，可能导致应用在后台被杀掉",
+      "is_checkable": true,
+      "intent": {
+        "permission": "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"
+      }
+    },{
+      "id": "background_data",
+      "title": "开启后台数据",
+      "description": "当应用后台运行，开启后台数据才能及时收到消息",
+      "is_checkable": true,
+      "intent": {
+        "component": "com.android.settings/com.android.settings.datausage.AppDataUsageActivity"
+      }
+    },{
+      "id": "alert_window",
+      "title": "允许后台弹出窗口",
+      "description": "当应用后台运行，能够显示来电界面",
+      "is_checkable": true,
+      "intent": {
+        "permission": "android.permission.SYSTEM_ALERT_WINDOW"
+      }
+    }
+  ],
+  "version_specifics": [
+    {
+      "version_matches_regex": "^V12.*",
+      "comment": "匹配所有 V12 开头的版本，即 MIUI 12",
+      "settings": [
+        {
+          "id": "battery_optimization",
+          "title": "关闭电池优化",
+          "description": "如果允许电池优化，可能导致应用在后台被杀掉",
+          "is_checkable": true,
+          "intent": {
+            "permission": "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"
+          }
+        },{
+          "id": "xiaomi_power_saving_strategy",
+          "title": "省电策略",
+          "description": "更改应用省电策略为‘无限制’，以保持应用长时间正常使用",
+          "is_checkable": false,
+          "intent": {
+            "component": "com.miui.powerkeeper/com.miui.powerkeeper.ui.HiddenAppsConfigActivity"
+          }
+        },{
+          "id": "background_data",
+          "title": "开启后台数据",
+          "description": "当应用后台运行，开启后台数据才能及时收到消息",
+          "is_checkable": true,
+          "intent": {
+            "component": "com.android.settings/com.android.settings.datausage.AppDataUsageActivity"
+          }
+        },{
+          "id": "xiaomi_background_popup",
+          "title": "开启后台弹出界面",
+          "description": "当应用后台运行，能够显示来电界面",
+          "is_checkable": true,
+          "intent": {
+            "action": "miui.intent.action.APP_PERM_EDITOR",
+            "component": "com.miui.securitycenter/com.miui.permcenter.permissions.PermissionsEditorActivity"
+          }
+        },{
+          "id": "xiaomi_lock_popup",
+          "title": "开启锁屏弹出界面",
+          "description": "当手机锁屏，能够显示来电界面",
+          "is_checkable": true,
+          "intent": {
+            "action": "miui.intent.action.APP_PERM_EDITOR",
+            "component": "com.miui.securitycenter/com.miui.permcenter.permissions.PermissionsEditorActivity"
+          }
+        }
+      ]
+    }
+  ]
+}

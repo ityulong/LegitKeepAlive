@@ -25,6 +25,8 @@ constraintlayout = "2.0.4"
 
 coroutines = "1.7.3" # 适用于 Kotlin 1.9.0
 
+lifecycle = "2.3.1"
+
 
 
 # 测试库版本暂时保留，如果遇到测试编译问题可能也需要调整
@@ -41,6 +43,10 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

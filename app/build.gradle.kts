@@ -54,6 +54,8 @@ dependencies {
 
     implementation("com.jakewharton.timber:timber:5.0.1")
 
-
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.activity.ktx)
 
 }

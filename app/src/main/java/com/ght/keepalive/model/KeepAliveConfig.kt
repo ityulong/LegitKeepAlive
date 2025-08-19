@@ -3,10 +3,7 @@ package com.ght.keepalive.model
 import com.ght.keepalive.enumid.SettingId
 import kotlinx.serialization.Serializable
 
-@Serializable
-data class AllConfigs(
-    val configs: Map<String, ManufacturerConfig>
-)
+// AllConfigs 已被移除
 
 @Serializable
 data class ManufacturerConfig(
